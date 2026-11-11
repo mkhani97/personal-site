@@ -62,7 +62,8 @@ p{margin:0}
 .status i{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 var(--amber);animation:beat 2.2s infinite}
 @keyframes beat{0%{box-shadow:0 0 0 0 rgba(255,178,63,.6)}70%{box-shadow:0 0 0 10px rgba(255,178,63,0)}100%{box-shadow:0 0 0 0 rgba(255,178,63,0)}}
 .hero h1{margin:24px 0 0;font-size:clamp(46px,8.6vw,128px);font-stretch:var(--wd,125%);font-weight:900;letter-spacing:-.01em;line-height:.86;text-transform:uppercase}
-.hero h1 .l2{display:block;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.hero h1 .l1,.hero h1 .l2{display:block;width:max-content}
+.hero h1 .l2{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
 .readout{margin-top:26px;color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:8px 22px}
 .readout b{color:var(--ice);font-weight:500}
 .lede{margin-top:28px;max-width:62ch;font-size:clamp(18px,2vw,22px);line-height:1.5}
@@ -293,7 +294,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   <canvas id="scope" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="status mono"><i></i>Seeking Spring/Summer 2027 internships</div>
-    <h1 id="name">Mahdi<span class="l2">Khani</span></h1>
+    <h1 id="name"><span class="l1">Mahdi</span><span class="l2">Khani</span></h1>
     <div class="readout mono">
       <span><b>53.5461° N</b> 113.4938° W</span>
       <span>BSc Computer Science <b>UAlberta '28</b></span>
@@ -676,11 +677,21 @@ function onScroll(){
   requestAnimationFrame(()=>{
     const y=scrollY, max=document.documentElement.scrollHeight-innerHeight;
     prog.style.transform='scaleX('+(max>0?y/max:0)+')';
-    if(!reduce){ const t=Math.min(1,y/520); nameEl.style.setProperty('--wd',(125-t*50)+'%'); }
+    if(!reduce && y<700){ const t=Math.min(1,y/520); nameEl.style.setProperty('--wd',(125-t*50)+'%'); alignName(); }
     ticking=false;
   });
 }
 addEventListener('scroll',onScroll,{passive:true}); onScroll();
+/* make KHANI exactly as wide as MAHDI by spreading its letters */
+const l1=nameEl.querySelector('.l1'), l2=nameEl.querySelector('.l2');
+function alignName(){
+  l2.style.letterSpacing='0px'; l2.style.marginRight='0px';
+  const gap=(l1.getBoundingClientRect().width - l2.getBoundingClientRect().width)/(l2.textContent.length-1);
+  l2.style.letterSpacing=gap+'px'; l2.style.marginRight=(-gap)+'px';
+}
+alignName();
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(alignName);
+addEventListener('resize',alignName);
 const secs=[...document.querySelectorAll('section.ch')];
 if(io){
   const so=new IntersectionObserver(es=>{
