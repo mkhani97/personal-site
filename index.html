@@ -61,7 +61,7 @@ p{margin:0}
 .status{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--panel);padding:7px 14px 7px 12px;border-radius:999px;font-size:12px;color:var(--ink)}
 .status i{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 var(--amber);animation:beat 2.2s infinite}
 @keyframes beat{0%{box-shadow:0 0 0 0 rgba(255,178,63,.6)}70%{box-shadow:0 0 0 10px rgba(255,178,63,0)}100%{box-shadow:0 0 0 0 rgba(255,178,63,0)}}
-.hero h1{margin:28px 0 0;font-size:clamp(64px,13.5vw,196px);font-stretch:var(--wd,125%);font-weight:900;letter-spacing:-.01em;line-height:.86;text-transform:uppercase}
+.hero h1{margin:24px 0 0;font-size:clamp(46px,8.6vw,128px);font-stretch:var(--wd,125%);font-weight:900;letter-spacing:-.01em;line-height:.86;text-transform:uppercase}
 .hero h1 .l2{display:block;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
 .readout{margin-top:26px;color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:8px 22px}
 .readout b{color:var(--ice);font-weight:500}
@@ -165,10 +165,10 @@ section.ch{padding:112px 0;border-bottom:1px solid var(--line)}
 .chainstate.broken i{background:var(--bad)}
 .chainbar .btn{margin-left:auto}
 .chain{display:flex;align-items:stretch;overflow-x:auto;padding:6px 2px 18px;scroll-snap-type:x proximity}
-.blk{flex:1 0 200px;max-width:260px;scroll-snap-align:start;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;transition:border-color .4s,box-shadow .4s,transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s}
+.blk{flex:1 0 168px;max-width:240px;scroll-snap-align:start;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;transition:border-color .4s,box-shadow .4s,transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s}
 .blk .hd{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;color:var(--muted)}
 .blk .hd b{color:var(--amber);font-weight:600}
-.blk h3{font-size:22px;font-stretch:100%;font-weight:800;text-transform:uppercase;line-height:1.05}
+.blk h3{font-size:19px;font-stretch:100%;font-weight:800;text-transform:uppercase;line-height:1.05}
 .blk p{font-size:14px;line-height:1.5;color:var(--ink)}
 .blk dl{margin:auto 0 0;padding-top:10px;border-top:1px dashed var(--line);display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-family:var(--mono);font-stretch:80%;font-size:10px}
 .blk dt{color:var(--muted)}
@@ -179,7 +179,7 @@ section.ch{padding:112px 0;border-bottom:1px solid var(--line)}
 .blk.pending{border-style:dashed}
 .blk.pending h3{color:var(--muted)}
 .blk.found{border-color:#63d39a}
-.link{flex:0 0 34px;align-self:center;height:2px;background:var(--amber);position:relative;transform-origin:0 50%;transition:transform .6s cubic-bezier(.2,.7,.2,1),background .4s}
+.link{flex:0 0 22px;align-self:center;height:2px;background:var(--amber);position:relative;transform-origin:0 50%;transition:transform .6s cubic-bezier(.2,.7,.2,1),background .4s}
 .link::after{content:"";position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left-color:inherit;border-left:6px solid var(--amber);border-right:0}
 .link.bad{background:var(--bad);background-image:linear-gradient(90deg,var(--bad) 40%,transparent 40%,transparent 60%,var(--bad) 60%)}
 .link.bad::after{border-left-color:var(--bad)}
@@ -187,17 +187,42 @@ section.ch{padding:112px 0;border-bottom:1px solid var(--line)}
 .chain.pre .link{transform:scaleX(0)}
 .chain.pre.in .blk{opacity:1;transform:none}
 .chain.pre.in .link{transform:scaleX(1)}
-.markets{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;margin-top:56px;padding:28px}
-.markets h3{font-size:30px;font-stretch:108%;text-transform:uppercase}
-@media (max-width:900px){.markets{grid-template-columns:1fr}}
+/* ---------- 03 work ---------- */
+.work{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.job{overflow:hidden;display:flex;flex-direction:column}
+.jobvis{height:120px;border-bottom:1px solid var(--line);position:relative;background:linear-gradient(180deg,#0f151a,var(--panel))}
+.jobvis canvas,.jobvis svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.water .lane{stroke:rgba(124,195,228,.18);stroke-dasharray:2 8;fill:none}
+.water .wave{fill:none;stroke:var(--ice);stroke-width:1.4;opacity:.6;animation:swell 6s linear infinite}
+.water .w2{stroke:var(--amber);opacity:.35;animation-duration:9s}
+@keyframes swell{to{transform:translateX(-100px)}}
+.jobbody{padding:26px;display:flex;flex-direction:column;gap:12px}
+.jobbody .tag{align-self:flex-start}
+.job h3{font-size:30px;font-stretch:108%;text-transform:uppercase}
+.job .role{margin:0}
+.job .bul{margin-top:6px}
+.jobline{margin-top:6px;font-size:17px;max-width:52ch}
+@media (max-width:900px){.work{grid-template-columns:1fr}}
 
-/* ---------- 04 ATC ---------- */
-.atc{display:grid;grid-template-columns:minmax(260px,440px) 1fr;gap:56px;align-items:center}
+/* ---------- 05 projects ---------- */
+.feature{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:44px;align-items:center;padding:28px}
+.feature h3{font-size:clamp(30px,4vw,48px);font-stretch:110%;text-transform:uppercase;margin:12px 0 20px}
 .radarbox{position:relative;aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid var(--line);background:radial-gradient(circle,#0f161c 0%,var(--bg) 75%)}
 #radar{width:100%;height:100%;display:block}
 .radarbox .lbl{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font-size:10px;color:var(--muted);letter-spacing:.12em}
-.kv{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-@media (max-width:860px){.atc{grid-template-columns:1fr}.radarbox{max-width:420px;width:100%;margin:0 auto}}
+.pmeta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-size:11px;color:var(--muted)}
+.st{font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:4px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.st.on{color:#63d39a;border-color:rgba(99,211,154,.4)}
+.st.soon{color:var(--amber);border-color:rgba(255,178,63,.45)}
+.projs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px}
+.proj{padding:24px;display:flex;flex-direction:column;gap:12px;transition:border-color .25s,transform .25s}
+.proj:hover{border-color:#3a4955}
+.proj h3{font-size:21px;font-stretch:104%;text-transform:uppercase;line-height:1.1}
+.proj p{font-size:15px;line-height:1.55}
+.proj .foot{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);font-size:11px;color:var(--ice);text-decoration:none}
+.proj a.foot:hover{color:var(--amber)}
+@media (max-width:980px){.projs{grid-template-columns:1fr}}
+@media (max-width:760px){.feature{grid-template-columns:1fr}.radarbox{max-width:360px;width:100%;margin:0 auto}}
 
 /* ---------- 05 stack ---------- */
 .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -241,8 +266,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <nav aria-label="Sections">
       <a href="#pmo" data-nav="pmo">PMO</a>
       <a href="#eml" data-nav="eml">EML</a>
+      <a href="#work" data-nav="work">Work</a>
       <a href="#chain" data-nav="chain">Chain</a>
-      <a href="#atc" data-nav="atc">ATC</a>
+      <a href="#projects" data-nav="projects">Projects</a>
       <a href="#stack" data-nav="stack">Stack</a>
       <a class="keep" href="#contact" data-nav="contact">Contact</a>
     </nav>
@@ -253,10 +279,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 <nav class="rail mono" aria-hidden="true">
   <a href="#pmo" data-rail="pmo">01 PMO</a>
   <a href="#eml" data-rail="eml">02 EML</a>
-  <a href="#chain" data-rail="chain">03 CHAIN</a>
-  <a href="#atc" data-rail="atc">04 ATC</a>
-  <a href="#stack" data-rail="stack">05 STACK</a>
-  <a href="#contact" data-rail="contact">06 CONTACT</a>
+  <a href="#work" data-rail="work">03 WORK</a>
+  <a href="#chain" data-rail="chain">04 CHAIN</a>
+  <a href="#projects" data-rail="projects">05 PROJECTS</a>
+  <a href="#stack" data-rail="stack">06 STACK</a>
+  <a href="#contact" data-rail="contact">07 CONTACT</a>
 </nav>
 
 <main id="top">
@@ -275,15 +302,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <p class="lede">I work on data, ML and automation. I turn messy operational data, from <em>electric-bus telemetry</em> to <em>project portfolios</em> to <em>live sports markets</em>, into systems people use to make decisions.</p>
     <div class="cta">
       <a class="btn solid" href="#contact">Get in touch</a>
-      <a class="btn" href="resume-data-ml.pdf">Résumé · Data/ML</a>
-      <a class="btn" href="resume-quant.pdf">Résumé · Quant</a>
-    </div>
-    <div class="stats">
-      <div><b>39 mo</b><span>of electric-bus CAN telemetry analyzed</span></div>
-      <div><b>2.2×</b><span>seasonal energy swing quantified</span></div>
-      <div><b>100+</b><span>parameters computed per trip segment</span></div>
-      <div><b>$200K+</b><span>trading revenue from my crypto bot in 2025</span></div>
-      <div><b>8</b><span>executives led at Alberta Blockchain</span></div>
+      <a class="btn" href="resume-data-ml.pdf">Résumé (PDF)</a>
     </div>
   </div>
 </section>
@@ -349,12 +368,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <span class="chno mono">CH 02 · VEHICLE TELEMETRY</span>
       <h2>Energy Mechatronics Lab</h2>
       <div class="role mono"><b>Vehicle Big Data Analyst Intern</b><span>Apr 2024 – Sep 2026</span><span>University of Alberta</span></div>
-      <p class="intro">For the AZEHT (Alberta Zero Emission Hydrogen Transit) program, I led the analysis of 39 months of electric-bus telemetry recorded through Edmonton winters and summers. Select a part of the vehicle to see what its data showed.</p>
+      <p class="intro">For the AZEHT (Alberta Zero Emission Hydrogen Transit) program, I led the analysis of 39 months of electric-bus telemetry recorded through Edmonton winters and summers. Most of my work was on transit buses, with some on trucks. Select a part of the bus to see what its data showed.</p>
     </div>
 
     <div class="eml" data-reveal>
       <div class="panel bpwrap">
-        <svg id="truck" viewBox="0 0 1000 380" role="group" aria-label="Blueprint of a heavy vehicle with seven selectable data points">
+        <svg id="truck" viewBox="0 0 1000 380" role="group" aria-label="Blueprint of an electric transit bus with seven selectable data points">
           <defs>
             <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#18222b" stroke-width="1"/></pattern>
             <pattern id="grid5" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M100 0H0V100" fill="none" stroke="#1f2b35" stroke-width="1"/></pattern>
@@ -363,61 +382,64 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
           <rect width="1000" height="380" fill="url(#grid5)"/>
 
           <!-- dimension line -->
-          <g class="bp f"><path d="M30 46 V36 M670 46 V36 M30 41 H670"/></g>
-          <text class="bptext" x="350" y="30" text-anchor="middle" opacity=".7">CAN BUS · 4 Hz · 39 MONTHS</text>
+          <g class="bp f"><path d="M60 46 V36 M700 46 V36 M60 41 H700"/></g>
+          <text class="bptext" x="380" y="30" text-anchor="middle" opacity=".7">CAN BUS · 4 Hz · 39 MONTHS</text>
 
-          <!-- trailer -->
-          <rect class="bp fill" x="30" y="72" width="640" height="190" rx="4"/>
-          <path class="bp f" d="M94 76V258 M158 76V258 M222 76V258 M286 76V258 M414 76V258 M478 76V258 M542 76V258 M606 76V258"/>
-          <path class="bp" d="M50 262H670 M60 262V276H250V262"/>
-          <circle class="bp" cx="110" cy="298" r="34"/><circle class="bp f" cx="110" cy="298" r="12"/>
-          <circle class="bp" cx="180" cy="298" r="34"/><circle class="bp f" cx="180" cy="298" r="12"/>
-          <path class="bp" d="M228 270V312H234V270 M520 262V306 M510 306H530"/>
-          <text class="bptext" x="58" y="104" opacity=".55">AZEHT · TELEMETRY LOG</text>
-          <text class="bptext" x="58" y="240" opacity=".55">−32 °C … +30 °C</text>
-
-          <!-- tractor frame + fifth wheel -->
-          <path class="bp" d="M600 272H968 M600 284H968 M600 272V284 M640 262H690V272"/>
-          <!-- sleeper -->
-          <rect class="bp fill" x="690" y="112" width="96" height="160" rx="3"/>
-          <!-- fairing -->
-          <path class="bp" d="M690 112 Q700 74 770 72 Q822 74 846 116"/>
+          <!-- bus body with wheel arches -->
+          <path class="bp fill" d="M60 112 Q60 86 88 86 H902 Q934 86 944 116 L960 210 V296 H782 A42 42 0 0 0 698 296 H272 A42 42 0 0 0 188 296 H60 Z"/>
+          <!-- side windows -->
+          <rect class="bp f" x="100" y="112" width="66" height="66" rx="5"/>
+          <rect class="bp f" x="178" y="112" width="66" height="66" rx="5"/>
+          <rect class="bp f" x="256" y="112" width="66" height="66" rx="5"/>
+          <rect class="bp f" x="334" y="112" width="66" height="66" rx="5"/>
+          <rect class="bp f" x="500" y="112" width="66" height="66" rx="5"/>
+          <rect class="bp f" x="578" y="112" width="66" height="66" rx="5"/>
+          <!-- doors -->
+          <rect class="bp" x="420" y="104" width="58" height="186" rx="3"/><path class="bp f" d="M449 104V290"/>
+          <rect class="bp" x="800" y="104" width="58" height="186" rx="3"/><path class="bp f" d="M829 104V290"/>
+          <!-- windshield + destination sign -->
+          <path class="bp f" d="M870 112 H922 Q932 114 935 124 L950 206 H870 Z"/>
+          <rect class="bp" x="872" y="92" width="58" height="14" rx="2"/>
+          <text class="bptext" x="877" y="103" font-size="8" opacity=".8">9</text>
+          <rect class="bp" x="70" y="96" width="22" height="12" rx="2"/>
+          <path class="bp" d="M968 262 H986 V242 M986 252 H972 M978 242 V262"/>
+          <path class="bp f" d="M806 284 H852 M426 284 H472"/>
+          <text class="bptext" x="760" y="300" font-size="8" opacity=".5">LOW FLOOR</text>
+          <!-- belt line, floor, bumpers, lights -->
+          <path class="bp f" d="M60 190 H800 M858 214 H960"/>
+          <rect class="bp" x="52" y="268" width="10" height="26" rx="2"/>
+          <rect class="bp" x="956" y="268" width="12" height="26" rx="2"/>
+          <rect class="bp" x="942" y="236" width="14" height="8" rx="1"/>
+          <rect class="bp" x="64" y="226" width="8" height="14" rx="1"/>
+          <text class="bptext" x="100" y="214" opacity=".55">AZEHT · TELEMETRY LOG</text>
+          <text class="bptext" x="100" y="234" opacity=".55">−32 °C … +30 °C</text>
+          <!-- roof battery packs + HVAC pod -->
+          <rect class="bp fill" x="180" y="66" width="380" height="20" rx="3"/>
+          <path class="bp f" d="M218 68V84 M256 68V84 M294 68V84 M332 68V84 M370 68V84 M408 68V84 M446 68V84 M484 68V84 M522 68V84"/>
+          <path class="bp" d="M600 86 V74 Q600 68 608 68 H682 Q690 68 690 74 V86"/>
           <!-- GPS dome -->
-          <path class="bp" d="M744 75 A16 9 0 0 1 776 75 Z"/>
-          <!-- exhaust stack -->
-          <rect class="bp" x="779" y="58" width="7" height="160" rx="2"/>
-          <!-- cab -->
-          <path class="bp fill" d="M786 272 L786 118 L840 114 Q852 114 856 126 L878 186 L952 196 Q966 198 968 212 L970 272 Z"/>
-          <path class="bp f" d="M796 130 L838 128 L860 182 L796 182 Z"/>
-          <rect class="bp f" x="794" y="124" width="72" height="132" rx="3"/>
-          <path class="bp f" d="M962 206V256 M955 206V256"/>
-          <rect class="bp" x="948" y="212" width="14" height="8" rx="1"/>
-          <rect class="bp" x="958" y="256" width="18" height="28" rx="2"/>
-          <!-- mirror -->
-          <path class="bp" d="M870 152 L886 144"/><rect class="bp" x="884" y="126" width="8" height="30" rx="2"/>
+          <path class="bp" d="M724 86 A16 9 0 0 1 756 86 Z"/>
           <!-- antenna -->
-          <path class="bp" d="M830 114 V46"/><circle class="bp" cx="830" cy="43" r="3"/>
+          <path class="bp" d="M820 86 V44"/><circle class="bp" cx="820" cy="41" r="3"/>
+          <!-- mirror -->
+          <path class="bp" d="M948 150 L966 142"/><rect class="bp" x="964" y="126" width="8" height="30" rx="2"/>
           <!-- ECU -->
-          <rect class="bp" x="808" y="196" width="48" height="26" rx="2"/>
-          <text class="bptext" x="832" y="213" text-anchor="middle" font-size="9">ECU</text>
-          <!-- battery -->
-          <rect class="bp fill" x="752" y="246" width="104" height="40" rx="3"/>
-          <path class="bp f" d="M765 250V282 M778 250V282 M791 250V282 M804 250V282 M817 250V282 M830 250V282 M843 250V282"/>
-          <!-- tractor wheels -->
-          <circle class="bp" cx="640" cy="298" r="34"/><circle class="bp f" cx="640" cy="298" r="12"/>
-          <circle class="bp" cx="708" cy="298" r="34"/><circle class="bp f" cx="708" cy="298" r="12"/>
-          <circle class="bp" cx="905" cy="298" r="34"/><circle class="bp f" cx="905" cy="298" r="12"/>
-          <path class="bp f" d="M861 272 A44 44 0 0 1 949 272"/>
+          <rect class="bp" x="878" y="226" width="54" height="26" rx="2"/>
+          <text class="bptext" x="905" y="243" text-anchor="middle" font-size="9">ECU</text>
+          <!-- wheels -->
+          <circle class="bp" cx="230" cy="298" r="34"/><circle class="bp f" cx="230" cy="298" r="12"/>
+          <circle class="bp" cx="740" cy="298" r="34"/><circle class="bp f" cx="740" cy="298" r="12"/>
           <!-- ground -->
           <path class="bp f" d="M0 332H1000"/>
 
           <!-- CAN bus wiring -->
-          <path class="can" d="M830 196 V114"/>
-          <path class="can" d="M808 205 H760 V80"/>
-          <path class="can" d="M856 200 L888 156"/>
-          <path class="can" d="M832 222 V246"/>
-          <path class="can" d="M808 216 H700 L640 264"/>
-          <path class="can" d="M690 190 H360 V180"/>
+          <path class="can" d="M878 246 H120"/>
+          <path class="can" d="M370 246 V88"/>
+          <path class="can" d="M230 246 V262"/>
+          <path class="can" d="M740 246 V92"/>
+          <path class="can" d="M820 246 V88"/>
+          <path class="can" d="M905 226 V106"/>
+          <path class="can" d="M932 236 L966 156"/>
 
           <g id="hotspots"></g>
         </svg>
@@ -429,68 +451,113 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   </div>
 </section>
 
-<!-- ================= 03 CHAIN ================= -->
+<!-- ================= 03 WORK ================= -->
+<section class="ch" id="work">
+  <div class="wrap">
+    <div class="chhead" data-reveal>
+      <span class="chno mono">CH 03 · MORE EXPERIENCE</span>
+      <h2>Other work</h2>
+      <p class="intro">Alongside my main roles: pricing live sports markets, and keeping people safe on the pool deck.</p>
+    </div>
+    <div class="work">
+      <article class="panel job" data-reveal>
+        <div class="jobvis odds" aria-hidden="true"><canvas id="odds"></canvas></div>
+        <div class="jobbody">
+          <span class="tag mono">Live markets</span>
+          <h3>Betsson Group</h3>
+          <div class="role mono"><b>US Sports Data Analyst</b><span>Sep 2024 – present</span><span>Remote · Sporting Solutions</span></div>
+          <ul class="bul">
+            <li>Analyze live and historical US sports data in SQL to tune the predictive models that set betting odds.</li>
+            <li>Deliver live odds updates to partner sportsbooks, keeping markets accurate as games unfold.</li>
+            <li>Refine data pipelines and visualization tools to improve model accuracy and usability.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="panel job" data-reveal>
+        <div class="jobvis water" aria-hidden="true">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+            <path class="lane" d="M0 40 H400 M0 80 H400"/>
+            <path class="wave w1" d="M0 60 Q25 48 50 60 T100 60 T150 60 T200 60 T250 60 T300 60 T350 60 T400 60 T450 60 T500 60"/>
+            <path class="wave w2" d="M0 70 Q25 60 50 70 T100 70 T150 70 T200 70 T250 70 T300 70 T350 70 T400 70 T450 70 T500 70"/>
+          </svg>
+        </div>
+        <div class="jobbody">
+          <span class="tag mono">Community</span>
+          <h3>City of Edmonton</h3>
+          <div class="role mono"><b>Lifeguard</b><span>Jun 2023 – present</span><span>Edmonton, AB</span></div>
+          <p class="jobline">Saving lives, preventing injuries, and maintaining safety and good vibes at the pool.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 CHAIN ================= -->
 <section class="ch" id="chain">
   <div class="wrap">
     <div class="chhead" data-reveal>
-      <span class="chno mono">CH 03 · BLOCKCHAIN &amp; MARKETS</span>
+      <span class="chno mono">CH 04 · BLOCKCHAIN</span>
       <h2>On-chain record</h2>
-      <p class="intro">My work in crypto and markets, written as a small proof-of-work chain. Each block's SHA-256 hash covers its contents and the hash before it, mined live in your browser.</p>
+      <p class="intro">My work in crypto, written as a small proof-of-work chain. Each block's SHA-256 hash covers its contents and the hash before it, mined live in your browser.</p>
     </div>
 
     <div class="chainbar">
       <div class="chainstate mono" id="chainstate"><i></i><span>Verifying chain…</span></div>
-      <button class="btn" id="tamper" type="button">Tamper with block #1</button>
+      <button class="btn" id="tamper" type="button">Tamper with block #2</button>
     </div>
     <div class="chain" id="chainEl" aria-label="Blockchain of projects"></div>
     <p class="caption mono">Try the button: change one block and every block after it stops matching.</p>
 
-    <div class="panel markets" data-reveal>
-      <div>
-        <span class="tag mono">Live markets</span>
-        <h3 style="margin-top:14px">Betsson Group</h3>
-        <div class="role mono" style="margin-top:10px"><b>US Sports Data Analyst</b><span>Sep 2024 – present</span><span>Remote · Sporting Solutions</span></div>
-      </div>
-      <ul class="bul">
-        <li>Analyze live and historical US sports data in SQL to tune the predictive models that set betting odds.</li>
-        <li>Deliver live odds updates to partner sportsbooks, keeping markets accurate as games unfold.</li>
-        <li>Refine data pipelines and visualization tools to improve model accuracy and usability.</li>
-      </ul>
-    </div>
   </div>
 </section>
 
-<!-- ================= 04 ATC ================= -->
-<section class="ch" id="atc">
+<!-- ================= 05 PROJECTS ================= -->
+<section class="ch" id="projects">
   <div class="wrap">
-    <div class="atc">
-      <div class="radarbox" data-reveal>
+    <div class="chhead" data-reveal>
+      <span class="chno mono">CH 05 · PROJECTS</span>
+      <h2>Projects</h2>
+      <p class="intro">Things I build and compete in outside of work. This list keeps growing.</p>
+    </div>
+
+    <article class="panel feature" data-reveal>
+      <div class="radarbox">
         <canvas id="radar" aria-label="Animated radar showing simulated aircraft being sequenced onto a runway approach"></canvas>
         <span class="lbl mono">SIM · APPROACH</span>
       </div>
-      <div data-reveal>
-        <div class="chhead" style="margin-bottom:28px">
-          <span class="chno mono">CH 04 · PROJECT · ONGOING</span>
-          <h2>RL Air Traffic Controller</h2>
-          <div class="role mono"><b>Python · PyTorch</b><span>Reinforcement learning</span></div>
-        </div>
+      <div>
+        <div class="pmeta mono"><span class="st on">Ongoing</span><span>Python · PyTorch</span></div>
+        <h3>RL Air Traffic Controller</h3>
         <ul class="bul">
           <li>Building a reinforcement learning system to support real-time air traffic decisions in the airspace around airports.</li>
           <li>Training agents to prevent near-misses and optimize aircraft sequencing for taxiing, takeoffs and landings.</li>
         </ul>
-        <div class="kv">
-          <span class="tag mono">Separation</span><span class="tag mono">Sequencing</span><span class="tag mono">Multi-agent</span>
-        </div>
       </div>
+    </article>
+
+    <!-- To add a project, copy one <article class="proj"> block below and edit it. -->
+    <div class="projs">
+      <article class="panel proj" data-reveal>
+        <div class="pmeta mono"><span class="st">Retired · 2025</span><span>Pine Script</span></div>
+        <h3>Algorithmic Crypto Trading Bot</h3>
+        <p>An autonomous TradingView strategy using predictive signals to time crypto trades. It generated over $200K in 2025, and I retired it once its edge faded.</p>
+        <a class="foot mono" href="#chain">See blocks #1–2 on the chain ↑</a>
+      </article>
+      <article class="panel proj" data-reveal>
+        <div class="pmeta mono"><span class="st on">Live</span><span>HTML · CSS · JS</span></div>
+        <h3>This website</h3>
+        <p>Hand-built with no framework: a SHA-256 proof-of-work chain that mines in your browser, a clickable bus blueprint and a canvas radar.</p>
+        <a class="foot mono" href="https://github.com/mkhani97">Source on GitHub ↗</a>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ================= 05 STACK ================= -->
+<!-- ================= 06 STACK ================= -->
 <section class="ch" id="stack">
   <div class="wrap">
     <div class="chhead" data-reveal>
-      <span class="chno mono">CH 05 · STACK</span>
+      <span class="chno mono">CH 06 · STACK</span>
       <h2>Tools &amp; training</h2>
     </div>
     <div class="stack">
@@ -524,10 +591,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   </div>
 </section>
 
-<!-- ================= 06 CONTACT ================= -->
+<!-- ================= 07 CONTACT ================= -->
 <section class="ch contact" id="contact">
   <div class="wrap">
-    <span class="chno mono" style="color:var(--amber);font-size:12px">CH 06 · CONTACT</span>
+    <span class="chno mono" style="color:var(--amber);font-size:12px">CH 07 · CONTACT</span>
     <h2 data-reveal style="margin-top:14px">Hiring for<br>Summer <span>2027?</span></h2>
     <p class="intro" style="margin-top:24px">I'm looking for Spring/Summer 2027 internships in data, ML, software or quant roles, in the US, Canada or abroad.</p>
     <div class="rows">
@@ -684,19 +751,19 @@ if(reduce){ const s=document.querySelector('.flow svg'); s && s.pauseAnimations 
 
 /* ---------- EML truck ---------- */
 const parts=[
-  {id:'antenna', x:830,y:43, part:'Roof antenna', title:'Weather link', stat:'Hourly', small:true, slabel:'Open-Meteo weather, matched to every trip',
+  {id:'antenna', x:820,y:41, part:'Roof antenna', title:'Weather link', stat:'Hourly', small:true, slabel:'Open-Meteo weather, matched to every trip',
    body:'I joined each trip to hourly historical weather from the Open-Meteo API, so energy use could be compared against real outside conditions instead of only the vehicle’s own readings.'},
-  {id:'mirror', x:888,y:141, part:'Ambient temperature sensor', title:'Sensor bias', stat:'18.6 °C', slabel:'largest onboard sensor bias, found in deep cold',
+  {id:'mirror', x:968,y:141, part:'Ambient temperature sensor', title:'Sensor bias', stat:'18.6 °C', slabel:'largest onboard sensor bias, found in deep cold',
    body:'Checking the onboard temperature sensor against the weather record exposed a bias of up to 18.6 °C at the coldest temperatures. Every cold-weather energy figure depended on correcting it.'},
-  {id:'ecu', x:832,y:209, part:'CAN logger / ECU', title:'Raw telemetry', stat:'4 Hz', slabel:'CAN telemetry · 39 months · −32 to +30 °C',
+  {id:'ecu', x:905,y:239, part:'CAN logger / ECU', title:'Raw telemetry', stat:'4 Hz', slabel:'CAN telemetry · 39 months · −32 to +30 °C',
    body:'I led the analysis of 39 months of CAN bus telemetry sampled four times a second, covering Edmonton weather from −32 °C to +30 °C.'},
-  {id:'gps', x:760,y:64, part:'GPS receiver', title:'Route reports', stat:'Streamlit + Folium', small:true, slabel:'interactive route reporting app',
+  {id:'gps', x:740,y:76, part:'GPS receiver', title:'Route reports', stat:'Streamlit + Folium', small:true, slabel:'interactive route reporting app',
    body:'I built an app that turns raw GPS routes into segment-level reports on speed, road grade and energy use, so anyone on the team could inspect a trip on a map.'},
-  {id:'axle', x:640,y:298, part:'Drive axle', title:'Trip segments', stat:'100+', slabel:'parameters computed per segment',
+  {id:'axle', x:230,y:298, part:'Drive axle', title:'Trip segments', stat:'100+', slabel:'parameters computed per segment',
    body:'A pandas and NumPy pipeline split every trip into urban, highway and hill segments and computed more than 100 parameters for each one.'},
-  {id:'battery', x:804,y:266, part:'Battery pack', title:'Seasonal swing', stat:'2.2×', slabel:'difference in energy use between seasons',
+  {id:'battery', x:370,y:76, part:'Roof battery pack', title:'Seasonal swing', stat:'2.2×', slabel:'difference in energy use between seasons',
    body:'Energy use varied by a factor of 2.2 across the seasons, the key number for planning when and where electric buses can run reliably.'},
-  {id:'payload', x:360,y:167, part:'Payload', title:'City of Edmonton', stat:'Findings delivered', small:true, slabel:'presented to the City of Edmonton',
+  {id:'payload', x:901,y:99, part:'Destination sign', title:'City of Edmonton', stat:'Findings delivered', small:true, slabel:'presented to the City of Edmonton',
    body:'The results went to the City of Edmonton as advice on the best seasons, hours and routes to run electric buses.'}
 ];
 const hsG=document.getElementById('hotspots'), chipsEl=document.getElementById('chips'), info=document.getElementById('info');
@@ -755,6 +822,7 @@ select(0);
 /* ---------- blockchain ---------- */
 const DIFF='000';
 const blocks=[
+  {year:'origin', title:'CBN', body:'Three letters from the crypto wallet that launched my journey. Every block after this one traces back here.'},
   {year:'2025', title:'Trading bot', body:'Autonomous TradingView Pine Script strategy that used predictive signals to monitor crypto markets and time trades.'},
   {year:'2025', title:'$200K+ revenue', alt:'$2M+ revenue', body:'Generated over $200K in trading revenue in 2025, then retired the strategy once its market edge faded.', altBody:'Generated over $2M in trading revenue in 2025, then retired the strategy once its market edge faded.'},
   {year:'2026', title:'Alberta Blockchain', body:'Founded the University of Alberta’s blockchain student group and wrote its constitution. Founder & President.'},
@@ -806,7 +874,8 @@ function renderChain(){
   stateEl.querySelector('span').textContent= brokenAt>=0
     ? 'Chain broken at block #'+brokenAt+' · '+(blocks.length-brokenAt)+' blocks invalid'
     : 'Chain valid · '+blocks.length+' blocks · difficulty '+DIFF;
-  tamperBtn.textContent= tampered ? 'Restore block #1' : 'Tamper with block #1';
+  const ti=blocks.findIndex(b=>b.alt);
+  tamperBtn.textContent= tampered ? 'Restore block #'+ti : 'Tamper with block #'+ti;
 }
 function esc(s){ return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 const pend={prev:'',n:0,found:0};
@@ -840,6 +909,28 @@ if(!reduce){
     if(pend.found){ pb.classList.add('found'); pf.textContent='Valid nonce found · re-mining'; pf.style.color='#63d39a'; pend.n++; }
   },90);
 }
+
+/* ---------- betsson odds ticker ---------- */
+(function(){
+  const c=document.getElementById('odds'); if(!c) return; let g=fit(c), redraw=null;
+  addEventListener('resize',()=>{g=fit(c); redraw&&redraw();});
+  // two random-walk lines that pull together and apart, like a live market
+  const N=120; let a=[],b=[],va=.5,vb=.5;
+  for(let i=0;i<N;i++){ va+= (Math.random()-.5)*.04; vb=1-va+(Math.random()-.5)*.03; a.push(va); b.push(vb); }
+  let acc=0;
+  redraw=loop(c,(t,dt)=>{
+    const {x,w,h}=g; acc+=dt;
+    if(acc>.12){ acc=0; va=Math.min(.85,Math.max(.15,va+(Math.random()-.5)*.05)); vb=Math.min(.85,Math.max(.15,1-va+(Math.random()-.5)*.03)); a.push(va); b.push(vb); a.shift(); b.shift(); }
+    x.clearRect(0,0,w,h);
+    x.strokeStyle='rgba(124,195,228,.07)'; for(let gy=20;gy<h;gy+=20){x.beginPath();x.moveTo(0,gy);x.lineTo(w,gy);x.stroke();}
+    [[a,'rgba(255,178,63,.85)'],[b,'rgba(124,195,228,.75)']].forEach(([arr,col])=>{
+      x.strokeStyle=col; x.lineWidth=1.5; x.beginPath();
+      arr.forEach((v,i)=>{ const px=i/(N-1)*w, py=h*.12+(1-v)*h*.76; i?x.lineTo(px,py):x.moveTo(px,py); });
+      x.stroke();
+      const v=arr[N-1], py=h*.12+(1-v)*h*.76; x.fillStyle=col; x.beginPath(); x.arc(w-3,py,3,0,Math.PI*2); x.fill();
+    });
+  });
+})();
 
 /* ---------- radar ---------- */
 (function(){
