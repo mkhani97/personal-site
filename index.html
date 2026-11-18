@@ -215,6 +215,23 @@ section.ch{padding:112px 0;border-bottom:1px solid var(--line)}
 .st{font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:4px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
 .st.on{color:#63d39a;border-color:rgba(99,211,154,.4)}
 .st.soon{color:var(--amber);border-color:rgba(255,178,63,.45)}
+.comp{grid-template-columns:1.25fr 1fr;align-items:start;margin-top:20px}
+.comp h3{font-size:clamp(26px,3.2vw,40px)}
+.comp p{font-size:16px;line-height:1.6;max-width:62ch}
+.score{display:flex;flex-direction:column;gap:16px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.tiles div{background:var(--bg);padding:16px}
+.tiles b{display:block;font-family:var(--display);font-stretch:112%;font-weight:800;font-size:32px;line-height:1;color:var(--ice);font-variant-numeric:tabular-nums}
+.tiles span{display:block;margin-top:8px;font-size:12px;color:var(--muted);line-height:1.35}
+.meter{display:grid;gap:10px;font-size:11px;color:var(--muted)}
+.meter .mt{text-transform:uppercase;letter-spacing:.08em;font-size:10px}
+.mrow{display:grid;grid-template-columns:60px 1fr 36px;align-items:center;gap:10px}
+.mrow i{height:8px;background:var(--line);border-radius:999px;overflow:hidden}
+.mrow em{display:block;height:100%;width:var(--v);background:var(--amber);border-radius:999px;transform-origin:0 50%;transition:transform 1.4s cubic-bezier(.2,.7,.2,1) .3s}
+.comp.pre .mrow em{transform:scaleX(0)}
+.comp.pre.in .mrow em{transform:none}
+.mrow b{color:var(--ink);font-weight:500;text-align:right}
+@media (max-width:900px){.comp{grid-template-columns:1fr}}
 .projs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:20px}
 .proj{padding:24px;display:flex;flex-direction:column;gap:12px;transition:border-color .25s,transform .25s}
 .proj:hover{border-color:#3a4955}
@@ -533,6 +550,28 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
           <li>Building a reinforcement learning system to support real-time air traffic decisions in the airspace around airports.</li>
           <li>Training agents to prevent near-misses and optimize aircraft sequencing for taxiing, takeoffs and landings.</li>
         </ul>
+      </div>
+    </article>
+
+    <article class="panel feature comp" data-reveal>
+      <div>
+        <div class="pmeta mono"><span class="st">Submitted · Nov 2026</span><span>University Blockchain Conference 2026</span></div>
+        <h3>Franklin Templeton Crypto Research Competition</h3>
+        <p>With a four-person team from the University of Alberta and the University of Michigan, I co-wrote a long thesis on GEODNET (GEOD), a decentralized network that corrects GPS down to the centimeter. We valued the token three ways, through buyback multiples, discounted future buybacks and market share, for a 12-month target of $0.38, about 60% above its price.</p>
+        <p style="margin-top:14px">Our report was one of 104 from 53 schools, reviewed by a panel of judges from major crypto and blockchain companies for UBC 2026.</p>
+      </div>
+      <div class="score">
+        <div class="tiles">
+          <div><b>104</b><span>reports submitted</span></div>
+          <div><b>53</b><span>schools competing</span></div>
+          <div><b>3</b><span>valuation methods behind the target</span></div>
+          <div><b>+60%</b><span>12-month price target</span></div>
+        </div>
+        <div class="meter mono">
+          <span class="mt">GEOD burned vs. mining rewards issued</span>
+          <div class="mrow"><span>Q3 2025</span><i><em style="--v:37%"></em></i><b>37%</b></div>
+          <div class="mrow"><span>Q3 2026</span><i><em style="--v:89%"></em></i><b>89%</b></div>
+        </div>
       </div>
     </article>
 
