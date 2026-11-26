@@ -295,6 +295,14 @@ section.ch{padding:112px 0;border-bottom:1px solid var(--line)}
 .rival h3{font-size:clamp(34px,4.6vw,56px);font-stretch:118%;text-transform:uppercase;margin:12px 0 4px}
 .rival .tagline{font-family:var(--mono);font-stretch:85%;font-size:12px;color:var(--amber);margin-bottom:14px}
 .rival > div > p{font-size:16px;line-height:1.6;max-width:62ch;margin-bottom:16px}
+.icobtn{padding:12px 14px}
+.ico.big{width:20px;height:20px}
+.btn.big{font-size:14px;padding:16px 24px}
+.rside{display:flex;flex-direction:column;gap:12px}
+.video{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vlink{font-size:11px;color:var(--ice);text-decoration:none;margin-bottom:6px}
+.vlink:hover{color:var(--amber)}
 .board{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:14px}
 .bhead{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
 .bhead b{color:var(--ice);font-weight:500}
@@ -403,23 +411,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <div class="status mono"><i></i>Seeking Spring/Summer 2027 internships</div>
     <h1 id="name"><span class="l1">Mahdi</span><span class="l2">Khani</span></h1>
     <div class="readout mono">
-      <span><b>53.5461° N</b> 113.4938° W</span>
       <span>BSc Computer Science <b>UAlberta '28</b></span>
       <span>Data &amp; Automation <b>Bird Construction</b></span>
     </div>
     <p class="lede">I work on data, ML and automation. I turn messy operational data, from <em>electric-bus telemetry</em> to <em>project portfolios</em> to <em>live sports markets</em>, into systems people use to make decisions.</p>
     <div class="cta">
-      <a class="btn solid" href="#contact">Get in touch</a>
+      <a class="btn solid icobtn" href="https://linkedin.com/in/mkhani97" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg class="ico big" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M0 1.15C0 .52.52 0 1.18 0h13.64C15.48 0 16 .52 16 1.15v13.7c0 .63-.52 1.15-1.18 1.15H1.18C.52 16 0 15.48 0 14.85V1.15zm4.94 12.24V6.17H2.54v7.22h2.4zM3.74 5.18c.84 0 1.36-.55 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.33 1.25h.01zm4.91 8.21V9.36c0-.22.02-.43.08-.58.17-.43.57-.88 1.23-.88.87 0 1.21.66 1.21 1.63v3.86h2.4V9.25c0-2.22-1.18-3.25-2.76-3.25-1.27 0-1.84.7-2.16 1.19v.03h-.02l.02-.03V6.17h-2.4c.03.68 0 7.22 0 7.22h2.4z"/></svg></a>
+      <a class="btn solid icobtn" href="https://github.com/mkhani97" target="_blank" rel="noopener" aria-label="GitHub profile"><svg class="ico big" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
       <a class="btn" href="resume-data-ml.pdf">Résumé (PDF)</a>
-      <a class="btn" href="https://linkedin.com/in/mkhani97" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M0 1.15C0 .52.52 0 1.18 0h13.64C15.48 0 16 .52 16 1.15v13.7c0 .63-.52 1.15-1.18 1.15H1.18C.52 16 0 15.48 0 14.85V1.15zm4.94 12.24V6.17H2.54v7.22h2.4zM3.74 5.18c.84 0 1.36-.55 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.33 1.25h.01zm4.91 8.21V9.36c0-.22.02-.43.08-.58.17-.43.57-.88 1.23-.88.87 0 1.21.66 1.21 1.63v3.86h2.4V9.25c0-2.22-1.18-3.25-2.76-3.25-1.27 0-1.84.7-2.16 1.19v.03h-.02l.02-.03V6.17h-2.4c.03.68 0 7.22 0 7.22h2.4z"/></svg>LinkedIn</a>
-      <a class="btn" href="https://github.com/mkhani97" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
     </div>
    </div>
    <!-- Photo: put your picture at photos/headshot.jpg. If the file is missing, this frame hides itself. -->
    <figure class="portrait">
      <img src="photos/headshot.jpg" alt="Portrait of Mahdi Khani" width="800" height="1000" onload="this.parentNode.classList.add('ok')" onerror="this.parentNode.remove()">
      <span class="tk tl"></span><span class="tk tr"></span><span class="tk bl"></span><span class="tk br"></span>
-     <figcaption class="mono">MK · Edmonton, AB</figcaption>
+     <figcaption class="mono">Salzburg, Austria</figcaption>
    </figure>
   </div>
 </section>
@@ -671,8 +677,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
           <li>QuickNode Streams push the program's events to our server in real time, and Gemini Prediction Markets power bonus pick rounds.</li>
           <li>A "Proof of Sweat" engine scores workouts on duration, effort and evidence, with results anyone in the group can verify.</li>
         </ul>
-        <div class="wlinks mono" style="margin-top:18px"><span>Rust · Anchor · React · FastAPI · Postgres</span><span>163 API tests · 11 program tests</span><a href="https://rival-app.ca" target="_blank" rel="noopener">rival-app.ca ↗</a><a href="https://youtu.be/nQOAayYhMf0" target="_blank" rel="noopener">Watch demo ↗</a></div>
+        <div class="wlinks mono" style="margin-top:18px"><span>Rust · Anchor · React · FastAPI · Postgres</span><span>163 API tests · 11 program tests</span></div>
+        <div class="cta" style="margin-top:20px"><a class="btn solid big" href="https://rival-app.ca" target="_blank" rel="noopener">Visit rival-app.ca ↗</a></div>
       </div>
+      <div class="rside">
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/nQOAayYhMf0" title="Rival demo video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <a class="vlink mono" href="https://www.youtube.com/watch?v=nQOAayYhMf0" target="_blank" rel="noopener">Demo video · watch on YouTube ↗</a>
       <div class="board" aria-label="Illustration of a Rival challenge leaderboard">
         <div class="bhead mono"><span>Weekly challenge · Podium</span><span>Pool <b>4 USDC</b></span></div>
         <ol>
@@ -683,6 +695,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
         </ol>
         <div class="lock mono">Payout locked on-chain: 60 / 30 / 10</div>
         <span class="bnote mono">Illustration · sample players</span>
+      </div>
       </div>
     </article>
 
