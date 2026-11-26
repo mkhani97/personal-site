@@ -291,6 +291,37 @@ section.ch{padding:112px 0;border-bottom:1px solid var(--line)}
 .wlinks a:hover{color:var(--amber)}
 @media (max-width:860px){.wins{grid-template-columns:1fr}.wins .shot img{aspect-ratio:16/10}}
 /* marathon */
+.rival{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;padding:28px;margin-bottom:20px;align-items:start}
+.rival h3{font-size:clamp(34px,4.6vw,56px);font-stretch:118%;text-transform:uppercase;margin:12px 0 4px}
+.rival .tagline{font-family:var(--mono);font-stretch:85%;font-size:12px;color:var(--amber);margin-bottom:14px}
+.rival > div > p{font-size:16px;line-height:1.6;max-width:62ch;margin-bottom:16px}
+.board{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.bhead{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.bhead b{color:var(--ice);font-weight:500}
+.board ol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.board li{display:grid;grid-template-columns:18px 70px 1fr 40px;align-items:center;gap:10px;font-size:14px}
+.board li span{color:var(--muted);font-size:11px}
+.board li em{font-style:normal}
+.board li i{height:8px;background:var(--line);border-radius:999px;overflow:hidden}
+.board li s{display:block;height:100%;width:var(--w);background:var(--ice);border-radius:999px;transform-origin:0 50%;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.board li:first-child s{background:var(--amber)}
+.board li b{text-align:right;font-weight:500;font-size:12px;font-variant-numeric:tabular-nums}
+.rival.pre .board li s{transform:scaleX(0)}
+.rival.pre.in .board li s{transform:none}
+.rival.pre.in .board li:nth-child(2) s{transition-delay:.15s}
+.rival.pre.in .board li:nth-child(3) s{transition-delay:.3s}
+.rival.pre.in .board li:nth-child(4) s{transition-delay:.45s}
+.lock{font-size:11px;color:#63d39a;border:1px solid rgba(99,211,154,.35);border-radius:6px;padding:8px 10px}
+.bnote{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+@media (max-width:900px){.rival{grid-template-columns:1fr}}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.gallery:not(:has(.tile)){display:none}
+.tile{margin:0}
+.tile img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--panel)}
+.tile figcaption{margin-top:10px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+@media (max-width:700px){.gallery{grid-template-columns:1fr 1fr}}
+.flag1{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);font-size:9px;color:#1a1205;background:var(--amber);padding:2px 6px;border-radius:3px;white-space:nowrap;text-transform:uppercase;letter-spacing:.08em}
+.flag1::after{content:"";position:absolute;left:50%;top:100%;margin-left:-4px;border:4px solid transparent;border-top-color:var(--amber)}
 .subhead{margin:56px 0 18px;font-size:12px;color:var(--amber);font-weight:500;text-transform:uppercase;letter-spacing:.1em}
 .marathon{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:40px;padding:28px;align-items:center}
 .marathon:not(:has(.shot)){grid-template-columns:1fr}
@@ -301,7 +332,7 @@ section.ch{padding:112px 0;border-bottom:1px solid var(--line)}
 .mclock{font-family:var(--display);font-stretch:118%;font-weight:900;font-size:clamp(56px,9vw,112px);line-height:.9;color:var(--ice);font-variant-numeric:tabular-nums}
 .mstats{display:flex;flex-wrap:wrap;gap:12px 32px;font-size:11px;color:var(--muted)}
 .mstats b{display:block;font-size:15px;color:var(--ink);font-weight:500;margin-bottom:2px}
-.course{margin-top:8px}
+.course{margin-top:30px}
 .track{position:relative;height:10px;border-radius:999px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px calc(100%/42.195)),linear-gradient(var(--panel),var(--panel));border:1px solid var(--line)}
 .track i{position:absolute;top:50%;left:var(--p,100%);width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(255,178,63,.2)}
 .track::before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p,100%);background:linear-gradient(90deg,rgba(255,178,63,.15),rgba(255,178,63,.5));border-radius:999px}
@@ -337,6 +368,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <a href="#chain" data-nav="chain">Chain</a>
       <a href="#projects" data-nav="projects">Projects</a>
       <a href="#stack" data-nav="stack">Stack</a>
+      <a href="#life" data-nav="life">Life</a>
       <a class="keep" href="#contact" data-nav="contact">Contact</a>
     </nav>
   </div>
@@ -350,7 +382,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   <a href="#chain" data-rail="chain">04 CHAIN</a>
   <a href="#projects" data-rail="projects">05 PROJECTS</a>
   <a href="#stack" data-rail="stack">06 STACK</a>
-  <a href="#contact" data-rail="contact">07 CONTACT</a>
+  <a href="#life" data-rail="life">07 LIFE</a>
+  <a href="#contact" data-rail="contact">08 CONTACT</a>
 </nav>
 
 <main id="top">
@@ -532,7 +565,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <div class="chhead" data-reveal>
       <span class="chno mono">CH 03 · MORE EXPERIENCE</span>
       <h2>Other work</h2>
-      <p class="intro">Alongside my main roles: pricing live sports markets, keeping people safe on the pool deck, and logging long runs.</p>
+      <p class="intro">Alongside my main roles: pricing live sports markets, and keeping people safe on the pool deck.</p>
     </div>
     <div class="work">
       <article class="panel job" data-reveal>
@@ -567,21 +600,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       </article>
     </div>
 
-    <h3 class="subhead mono">Off the clock</h3>
-    <article class="panel marathon" id="marathon" data-reveal>
-      <!-- Photo: photos/marathon.jpg. If missing, the card shows without it. -->
-      <figure class="shot"><img src="photos/marathon.jpg" alt="Mahdi running a marathon" loading="lazy" onerror="this.parentNode.remove()"></figure>
-      <div class="mbody">
-        <span class="tag mono">Endurance</span>
-        <h3>Marathon</h3>
-        <div class="mclock" id="mclock" aria-label="Finish time 4 hours">4:00:00</div>
-        <div class="mstats mono"><span><b>42.2 km</b>full marathon</span><span><b>5:41 /km</b>average pace</span><span><b>Top 10</b>U20 · Edmonton Marathon 2024</span></div>
-        <div class="course" aria-hidden="true">
-          <div class="track"><i id="mdot"></i></div>
-          <div class="ends mono"><span>Start</span><span>Half · 21.1 km</span><span>Finish</span></div>
-        </div>
-      </div>
-    </article>
   </div>
 </section>
 
@@ -631,6 +649,33 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
           <h4>GEODNET research pitch</h4>
           <p>We researched GEODNET, the DePIN network of GPS reference stations, and presented a pitch on it. This was its own presentation, separate from our Franklin Templeton report further down.</p>
         </div>
+      </div>
+    </article>
+
+    <article class="panel rival" id="rival" data-reveal>
+      <div>
+        <div class="pmeta mono"><span class="st on">Live · devnet</span><span>UBC 2026 Hackathon · Consumer Applications track</span></div>
+        <h3>Rival</h3>
+        <p class="tagline">Out-move your friends. Winner takes the pool.</p>
+        <p>Rival turns fitness into a competition. Friends put in a USDC entry fee, earn points from Oura-synced workouts, and a program on Solana pays out the prize pool automatically, so no friend has to hold the money and nobody can run off with it.</p>
+        <ul class="bul">
+          <li>Competition rules and the payout split are locked on-chain before anyone joins, and the program checks a signed result before paying out.</li>
+          <li>Sign-in is just an email: embedded wallets and automatic fee funding mean players never see a seed phrase or a gas prompt.</li>
+          <li>QuickNode Streams push the program's events to our server in real time, and Gemini Prediction Markets power bonus pick rounds.</li>
+          <li>A "Proof of Sweat" engine scores workouts on duration, effort and evidence, with results anyone in the group can verify.</li>
+        </ul>
+        <div class="wlinks mono" style="margin-top:18px"><span>Rust · Anchor · React · FastAPI · Postgres</span><span>163 API tests · 11 program tests</span><a href="https://rival-app.ca" target="_blank" rel="noopener">rival-app.ca ↗</a></div>
+      </div>
+      <div class="board" aria-label="Illustration of a Rival challenge leaderboard">
+        <div class="bhead mono"><span>Weekly challenge · Podium</span><span>Pool <b>4 USDC</b></span></div>
+        <ol>
+          <li><span class="mono">1</span><em>Maya</em><i><s style="--w:100%"></s></i><b class="mono">412</b></li>
+          <li><span class="mono">2</span><em>Sam</em><i><s style="--w:81%"></s></i><b class="mono">334</b></li>
+          <li><span class="mono">3</span><em>Jordan</em><i><s style="--w:63%"></s></i><b class="mono">259</b></li>
+          <li><span class="mono">4</span><em>Alex</em><i><s style="--w:40%"></s></i><b class="mono">165</b></li>
+        </ol>
+        <div class="lock mono">Payout locked on-chain: 60 / 30 / 10</div>
+        <span class="bnote mono">Illustration · sample players</span>
       </div>
     </article>
 
@@ -728,10 +773,43 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   </div>
 </section>
 
-<!-- ================= 07 CONTACT ================= -->
+<!-- ================= 07 LIFE ================= -->
+<section class="ch" id="life">
+  <div class="wrap">
+    <div class="chhead" data-reveal>
+      <span class="chno mono">CH 07 · OFF THE CLOCK</span>
+      <h2>Beyond work</h2>
+      <p class="intro">What I do when I'm not at a keyboard.</p>
+    </div>
+
+    <article class="panel marathon" id="marathon" data-reveal>
+      <!-- Photo: photos/marathon.jpg. If missing, the card shows without it. -->
+      <figure class="shot"><img src="photos/marathon.jpg" alt="Mahdi running the Edmonton Marathon" loading="lazy" onerror="this.parentNode.remove()"></figure>
+      <div class="mbody">
+        <span class="tag mono">Edmonton Marathon 2024</span>
+        <h3>Marathon</h3>
+        <div class="mclock" id="mclock" aria-label="Finish time 4 hours">4:00:00</div>
+        <div class="mstats mono"><span><b>Top 10</b>U20 finish</span><span><b>1st</b>U20 at the halfway mark</span><span><b>42.2 km</b>at 5:41 /km average</span></div>
+        <div class="course" aria-hidden="true">
+          <div class="track"><i id="mdot"></i><span class="flag1 mono">1st U20</span></div>
+          <div class="ends mono"><span>Start</span><span>Half · 21.1 km</span><span>Finish</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Photos: photos/soccer.jpg, photos/swimming.jpg, photos/violin.jpg. Any that are missing hide themselves. -->
+    <div class="gallery">
+      <figure class="tile" data-reveal><img src="photos/soccer.jpg" alt="Mahdi playing soccer" loading="lazy" onerror="this.parentNode.remove()"><figcaption class="mono">Soccer</figcaption></figure>
+      <figure class="tile" data-reveal><img src="photos/swimming.jpg" alt="Mahdi swimming" loading="lazy" onerror="this.parentNode.remove()"><figcaption class="mono">Swimming</figcaption></figure>
+      <figure class="tile" data-reveal><img src="photos/violin.jpg" alt="Mahdi playing violin" loading="lazy" onerror="this.parentNode.remove()"><figcaption class="mono">Violin</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 CONTACT ================= -->
 <section class="ch contact" id="contact">
   <div class="wrap">
-    <span class="chno mono" style="color:var(--amber);font-size:12px">CH 07 · CONTACT</span>
+    <span class="chno mono" style="color:var(--amber);font-size:12px">CH 08 · CONTACT</span>
     <h2 data-reveal style="margin-top:14px">Hiring for<br>Summer <span>2027?</span></h2>
     <p class="intro" style="margin-top:24px">I'm looking for Spring/Summer 2027 internships in data, ML, software or quant roles, in the US, Canada or abroad.</p>
     <div class="rows">
