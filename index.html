@@ -258,6 +258,55 @@ section.ch{padding:112px 0;border-bottom:1px solid var(--line)}
 .aw li span{color:var(--muted);font-family:var(--mono);font-stretch:85%;font-size:11px;white-space:nowrap;padding-top:3px}
 @media (max-width:980px){.stack{grid-template-columns:1fr}}
 
+
+/* ---------- photos ---------- */
+.herogrid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,4vw,64px);align-items:center}
+.portrait{display:none;margin:0;width:clamp(220px,24vw,340px);position:relative}
+.portrait.ok{display:block}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--panel)}
+.portrait .tk{position:absolute;width:18px;height:18px;border:2px solid var(--amber)}
+.portrait .tl{left:-8px;top:-8px;border-right:0;border-bottom:0}
+.portrait .tr{right:-8px;top:-8px;border-left:0;border-bottom:0}
+.portrait .bl{left:-8px;bottom:22px;border-right:0;border-top:0}
+.portrait .br{right:-8px;bottom:22px;border-left:0;border-top:0}
+.portrait figcaption,.shot figcaption{margin-top:10px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+@media (max-width:760px){.herogrid{grid-template-columns:1fr}.portrait{order:-1;width:150px}.portrait .tk{display:none}}
+.jobphoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.jobvis{height:180px}
+.shot{margin:0}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:var(--bg)}
+/* wins */
+.wins{display:grid;grid-template-columns:minmax(260px,400px) 1fr;gap:40px;padding:28px;margin-bottom:20px;align-items:start}
+.wins:not(:has(.shot)){grid-template-columns:1fr}
+.wins .shot img{aspect-ratio:4/5;height:auto}
+.winsbody{display:flex;flex-direction:column;gap:14px}
+.winsbody h3{font-size:clamp(30px,4vw,48px);font-stretch:110%;text-transform:uppercase}
+.winsbody > p{font-size:17px;max-width:62ch}
+.win{border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+.wt{align-self:flex-start;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#1a1205;background:var(--amber);padding:4px 9px;border-radius:999px}
+.win h4{margin:0;font-family:var(--display);font-stretch:105%;font-weight:800;font-size:22px;text-transform:uppercase}
+.win p{font-size:15.5px;line-height:1.6;max-width:66ch}
+.wlinks{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:11px;color:var(--muted)}
+.wlinks a{color:var(--ice);text-decoration:none}
+.wlinks a:hover{color:var(--amber)}
+@media (max-width:860px){.wins{grid-template-columns:1fr}.wins .shot img{aspect-ratio:16/10}}
+/* marathon */
+.subhead{margin:56px 0 18px;font-size:12px;color:var(--amber);font-weight:500;text-transform:uppercase;letter-spacing:.1em}
+.marathon{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:40px;padding:28px;align-items:center}
+.marathon:not(:has(.shot)){grid-template-columns:1fr}
+.marathon .shot img{aspect-ratio:4/5;height:auto}
+.mbody{display:flex;flex-direction:column;gap:14px}
+.mbody .tag{align-self:flex-start}
+.mbody h3{font-size:30px;font-stretch:108%;text-transform:uppercase}
+.mclock{font-family:var(--display);font-stretch:118%;font-weight:900;font-size:clamp(56px,9vw,112px);line-height:.9;color:var(--ice);font-variant-numeric:tabular-nums}
+.mstats{display:flex;flex-wrap:wrap;gap:12px 32px;font-size:11px;color:var(--muted)}
+.mstats b{display:block;font-size:15px;color:var(--ink);font-weight:500;margin-bottom:2px}
+.course{margin-top:8px}
+.track{position:relative;height:10px;border-radius:999px;background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px calc(100%/42.195)),linear-gradient(var(--panel),var(--panel));border:1px solid var(--line)}
+.track i{position:absolute;top:50%;left:var(--p,100%);width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(255,178,63,.2)}
+.track::before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p,100%);background:linear-gradient(90deg,rgba(255,178,63,.15),rgba(255,178,63,.5));border-radius:999px}
+.ends{display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+@media (max-width:860px){.marathon{grid-template-columns:1fr}.marathon .shot img{aspect-ratio:16/10}}
 /* ---------- 06 contact ---------- */
 .contact h2{font-size:clamp(44px,8vw,120px);font-stretch:118%;text-transform:uppercase;line-height:.9}
 .contact h2 span{color:var(--amber)}
@@ -309,7 +358,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 <!-- ================= HERO ================= -->
 <section class="hero">
   <canvas id="scope" aria-hidden="true"></canvas>
-  <div class="wrap">
+  <div class="wrap herogrid">
+   <div class="herotext">
     <div class="status mono"><i></i>Seeking Spring/Summer 2027 internships</div>
     <h1 id="name"><span class="l1">Mahdi</span><span class="l2">Khani</span></h1>
     <div class="readout mono">
@@ -322,6 +372,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <a class="btn solid" href="#contact">Get in touch</a>
       <a class="btn" href="resume-data-ml.pdf">Résumé (PDF)</a>
     </div>
+   </div>
+   <!-- Photo: put your picture at photos/headshot.jpg. If the file is missing, this frame hides itself. -->
+   <figure class="portrait">
+     <img src="photos/headshot.jpg" alt="Portrait of Mahdi Khani" width="800" height="1000" onload="this.parentNode.classList.add('ok')" onerror="this.parentNode.remove()">
+     <span class="tk tl"></span><span class="tk tr"></span><span class="tk bl"></span><span class="tk br"></span>
+     <figcaption class="mono">MK · Edmonton, AB</figcaption>
+   </figure>
   </div>
 </section>
 
@@ -475,7 +532,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
     <div class="chhead" data-reveal>
       <span class="chno mono">CH 03 · MORE EXPERIENCE</span>
       <h2>Other work</h2>
-      <p class="intro">Alongside my main roles: pricing live sports markets, and keeping people safe on the pool deck.</p>
+      <p class="intro">Alongside my main roles: pricing live sports markets, keeping people safe on the pool deck, and logging long runs.</p>
     </div>
     <div class="work">
       <article class="panel job" data-reveal>
@@ -492,12 +549,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
         </div>
       </article>
       <article class="panel job" data-reveal>
-        <div class="jobvis water" aria-hidden="true">
-          <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+        <div class="jobvis water">
+          <svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
             <path class="lane" d="M0 40 H400 M0 80 H400"/>
             <path class="wave w1" d="M0 60 Q25 48 50 60 T100 60 T150 60 T200 60 T250 60 T300 60 T350 60 T400 60 T450 60 T500 60"/>
             <path class="wave w2" d="M0 70 Q25 60 50 70 T100 70 T150 70 T200 70 T250 70 T300 70 T350 70 T400 70 T450 70 T500 70"/>
           </svg>
+          <!-- Photo: photos/lifeguard.jpg. If missing, the wave graphic shows instead. -->
+          <img class="jobphoto" src="photos/lifeguard.jpg" alt="Mahdi lifeguarding for the City of Edmonton" loading="lazy" onerror="this.remove()">
         </div>
         <div class="jobbody">
           <span class="tag mono">Community</span>
@@ -507,6 +566,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
         </div>
       </article>
     </div>
+
+    <h3 class="subhead mono">Off the clock</h3>
+    <article class="panel marathon" id="marathon" data-reveal>
+      <!-- Photo: photos/marathon.jpg. If missing, the card shows without it. -->
+      <figure class="shot"><img src="photos/marathon.jpg" alt="Mahdi running a marathon" loading="lazy" onerror="this.parentNode.remove()"></figure>
+      <div class="mbody">
+        <span class="tag mono">Endurance</span>
+        <h3>Marathon</h3>
+        <div class="mclock" id="mclock" aria-label="Finish time 4 hours">4:00:00</div>
+        <div class="mstats mono"><span><b>42.2 km</b>full marathon</span><span><b>5:41 /km</b>average pace</span><span><b>Top 10</b>U20 · Edmonton Marathon 2024</span></div>
+        <div class="course" aria-hidden="true">
+          <div class="track"><i id="mdot"></i></div>
+          <div class="ends mono"><span>Start</span><span>Half · 21.1 km</span><span>Finish</span></div>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -537,6 +612,27 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <h2>Projects</h2>
       <p class="intro">Things I build and compete in outside of work. This list keeps growing.</p>
     </div>
+
+    <article class="panel wins" data-reveal>
+      <!-- Photo: photos/ubc-2026.jpg. If missing, the card shows without it. -->
+      <figure class="shot"><img src="photos/ubc-2026.jpg" alt="Mahdi and his team at the University Blockchain Conference 2026 in Austin" loading="lazy" onerror="this.parentNode.remove()"><figcaption class="mono">UBC 2026 · Austin, TX</figcaption></figure>
+      <div class="winsbody">
+        <div class="pmeta mono"><span class="st on">2 wins</span><span>University Blockchain Conference · Austin · Nov 2026</span></div>
+        <h3>Two wins at UBC 2026</h3>
+        <p>At the University Blockchain Conference in Austin, my team of four won two of the conference's competitions.</p>
+        <div class="win">
+          <span class="wt mono">Winner · Solana Flash Hackathon</span>
+          <h4>GeneLedger</h4>
+          <p>A BLAST-style DNA identification tool on Solana. A lab submits an unknown DNA sequence, and GeneLedger matches it against a shared reference library on-chain, then translates it into its protein. Each result is recorded with who submitted it and when, so it works like a public lab notebook that anyone can check and no one can quietly change.</p>
+          <div class="wlinks mono"><span>Rust · Anchor · Solana</span><a href="https://github.com/shaanbhasin64-ux/geneledger" target="_blank" rel="noopener">Code ↗</a><a href="https://htmlpreview.github.io/?https://github.com/shaanbhasin64-ux/geneledger/blob/main/app/index.html" target="_blank" rel="noopener">Live demo ↗</a></div>
+        </div>
+        <div class="win">
+          <span class="wt mono">Winner · SpaceX Grokbot Research Competition</span>
+          <h4>GEODNET research pitch</h4>
+          <p>We researched GEODNET, the DePIN network of GPS reference stations, and presented a pitch on it. This was its own presentation, separate from our Franklin Templeton report further down.</p>
+        </div>
+      </div>
+    </article>
 
     <article class="panel feature" data-reveal>
       <div class="radarbox">
@@ -981,6 +1077,21 @@ if(!reduce){
       const v=arr[N-1], py=h*.12+(1-v)*h*.76; x.fillStyle=col; x.beginPath(); x.arc(w-3,py,3,0,Math.PI*2); x.fill();
     });
   });
+})();
+
+/* ---------- marathon: run the course on first view ---------- */
+(function(){
+  const card=document.getElementById('marathon'), clock=document.getElementById('mclock'), track=card&&card.querySelector('.track');
+  if(!card || reduce || !io || card.getBoundingClientRect().top < innerHeight) return;
+  const fmt=sec=>{ const h=Math.floor(sec/3600), m=Math.floor(sec%3600/60), s2=Math.floor(sec%60); return h+':'+String(m).padStart(2,'0')+':'+String(s2).padStart(2,'0'); };
+  track.style.setProperty('--p','0%'); clock.textContent='0:00:00';
+  const o=new IntersectionObserver(es=>{ es.forEach(e=>{ if(!e.isIntersecting) return; o.disconnect();
+    const T=2600, t0=performance.now();
+    (function step(t){ const k=Math.min(1,(t-t0)/T), e2=1-Math.pow(1-k,3);
+      track.style.setProperty('--p',(e2*100)+'%'); clock.textContent=fmt(e2*14400);
+      if(k<1) requestAnimationFrame(step); else clock.textContent='4:00:00'; })(t0);
+  }); },{threshold:.4});
+  o.observe(card);
 })();
 
 /* ---------- radar ---------- */
